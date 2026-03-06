@@ -25,28 +25,39 @@ plasma-plasmoid-template/
 sudo pacman -S plasma-framework qt6-declarative kpackage plasma-sdk
 ```
 
-## Installation
+## Usage
 
-Clone the repo and copy the plasmoid folder to the Plasma plasmoids directory:
+### Workflow 1 — Install and test by name
+
+Clone directly into the Plasma plasmoids directory:
 ```bash
-git clone https://github.com/neo-unplugged/plasma-plasmoid-template
-cp -r plasma-plasmoid-template ~/.local/share/plasma/plasmoids/
+git clone https://github.com/neo-unplugged/plasma-plasmoid-template ~/.local/share/plasma/plasmoids/plasma-plasmoid-template
 ```
 
-## Test it
-
-### Option 1: By name (widget must be inside `~/.local/share/plasma/plasmoids/`)
+Then test it:
 ```bash
 plasmawindowed plasma-plasmoid-template
 ```
 
-### Option 2: By current directory (no registration needed, great for development)
+Or:
 ```bash
-cd ~/.local/share/plasma/plasmoids/plasma-plasmoid-template
+plasmoidviewer -a ~/.local/share/plasma/plasmoids/plasma-plasmoid-template
+```
+
+### Workflow 2 — Clone anywhere and test directly
+
+Clone to any folder you want:
+```bash
+git clone https://github.com/neo-unplugged/plasma-plasmoid-template
+cd plasma-plasmoid-template
 plasmoidviewer -a .
 ```
 
+No installation or registration needed.
+
 ## Add to Desktop or Panel
+
+> Requires Workflow 1 (widget must be installed in `~/.local/share/plasma/plasmoids/`)
 
 1. Right-click desktop → **Add Widgets**
 2. Search for **"Plasmoid Template"**
@@ -68,9 +79,8 @@ Then rename the folder to match your new `Id`.
 
 ## Development Tips
 
-- Edit `contents/ui/main.qml` for your widget UI
-- `plasmawindowed` — quick test by name
-- `plasmoidviewer -a .` — test directly from folder, no registration needed
+- `plasmawindowed` — test by name, widget must be installed
+- `plasmoidviewer -a .` — test from any folder, no installation needed
 - Use `console.log("msg")` for debugging, view output with `journalctl -f`
 - Browse `/usr/share/plasma/plasmoids/` for real world examples
 
