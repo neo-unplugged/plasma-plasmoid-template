@@ -1,0 +1,15 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [{ "Email": "your@email.com", "Name": "Your Name" }],
+        "Category": "Utilities",
+        "Description": "A template for creating KDE Plasma widgets",
+        "Icon": "plasma",
+        "Id": "plasma-plasmoid-template",
+        "License": "GPL-2.0-or-later",
+        "Name": "Plasmoid Template",
+        "Version": "1.0",
+        "Website": "https://github.com/neo-unplugged/plasma-plasmoid-template"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}
