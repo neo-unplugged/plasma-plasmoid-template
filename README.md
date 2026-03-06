@@ -15,7 +15,14 @@ plasma-plasmoid-template/
 ## Requirements
 
 - KDE Plasma 6
-- Arch Linux (or any distro with `plasma-framework`)
+- `plasma-framework`
+- `qt6-declarative`
+- `kpackage`
+
+### Install dependencies (Arch Linux)
+```bash
+sudo pacman -S plasma-framework qt6-declarative kpackage
+```
 
 ## Installation
 
