@@ -18,10 +18,11 @@ plasma-plasmoid-template/
 - `plasma-framework`
 - `qt6-declarative`
 - `kpackage`
+- `plasma-sdk` (optional, for `plasmoidviewer`)
 
 ### Install dependencies (Arch Linux)
 ```bash
-sudo pacman -S plasma-framework qt6-declarative kpackage
+sudo pacman -S plasma-framework qt6-declarative kpackage plasma-sdk
 ```
 
 ## Installation
@@ -33,8 +34,16 @@ cp -r plasma-plasmoid-template ~/.local/share/plasma/plasmoids/
 ```
 
 ## Test it
+
+### Option 1: By name (widget must be inside `~/.local/share/plasma/plasmoids/`)
 ```bash
 plasmawindowed plasma-plasmoid-template
+```
+
+### Option 2: By current directory (no registration needed, great for development)
+```bash
+cd ~/.local/share/plasma/plasmoids/plasma-plasmoid-template
+plasmoidviewer -a .
 ```
 
 ## Add to Desktop or Panel
@@ -60,7 +69,8 @@ Then rename the folder to match your new `Id`.
 ## Development Tips
 
 - Edit `contents/ui/main.qml` for your widget UI
-- Re-run `plasmawindowed` to see changes
+- `plasmawindowed` — quick test by name
+- `plasmoidviewer -a .` — test directly from folder, no registration needed
 - Use `console.log("msg")` for debugging, view output with `journalctl -f`
 - Browse `/usr/share/plasma/plasmoids/` for real world examples
 
